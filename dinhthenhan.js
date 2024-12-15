@@ -1,87 +1,102 @@
-var app = new Vue({
-    el: "#app", data() {
-        return {
-           ifshow: true,
-          checked: false,
-          radio: '1',
-          activeSelect: '',
-          selectOption: [{
+// var app = new Vue({
+//     el: "#app", data() {
+//         return {
+//            ifshow: true,
+//           checked: false,
+//           radio: '1',
+//           activeSelect: '',
+//           selectOption: [{
         
-          }],
-          input: "",
-          showOption: false,
-          tabValue: "one",
-        }}, mounted() {
-				this.setRect(360, 320);
+//           }],
+//           input: "",
+//           showOption: false,
+//           tabValue: "one",
+//         }}, mounted() {
+// 				this.setRect(360, 320);
 
-				setWindowDrag(0, 0, 0, 0);
+// 				setWindowDrag(0, 0, 0, 0);
     
-				var layout = function()
-				{
-					if(window.lastorientation==window.orientation) return;
-					window.lastorientation=window.orientation;
+// 				var layout = function()
+// 				{
+// 					if(window.lastorientation==window.orientation) return;
+// 					window.lastorientation=window.orientation;
 				
-					if(Math.abs(window.orientation)==90) {
-						setWindowRect(0,0,window.screen.height,window.screen.width);
-					} else {
-						setWindowRect(0,0,window.screen.width,window.screen.height);
-					}
-				}
+// 					if(Math.abs(window.orientation)==90) {
+// 						setWindowRect(0,0,window.screen.height,window.screen.width);
+// 					} else {
+// 						setWindowRect(0,0,window.screen.width,window.screen.height);
+// 					}
+// 				}
 	
-				layout(); 
-				window.addEventListener("orientationchange", layout, false);
+// 				layout(); 
+// 				window.addEventListener("orientationchange", layout, false);
 
-				setButtonAction(function () {
-					var menu = document.querySelector("#app");
-					if (menu.style.display == 'none') {
-						menu.style.display = 'block';
-						setWindowTouch(true);
-					} else {
-						menu.style.display = 'none';
-						setWindowTouch(false);
-					}
-				});
-			},
+// 				setButtonAction(function () {
+// 					var menu = document.querySelector("#app");
+// 					if (menu.style.display == 'none') {
+// 						menu.style.display = 'block';
+// 						setWindowTouch(true);
+// 					} else {
+// 						menu.style.display = 'none';
+// 						setWindowTouch(false);
+// 					}
+// 				});
+// 			},
 
-			methods: {
-    setRect(w, h, x = -1, y = -1) {
-     var boxW = w;
-     var boxH = h;
+// 			methods: {
+//     setRect(w, h, x = -1, y = -1) {
+//      var boxW = w;
+//      var boxH = h;
 
-     var ayMenu = this.$refs.menuMain;
-     ayMenu.style.width = `${boxW}px`;
-     ayMenu.style.height = `${boxH}px`;
-     if (x == -1) ayMenu.style.left = `calc(50% - ${boxW / 2}px)`;
-     if (y == -1) ayMenu.style.top = `calc(50% - ${boxH / 2}px)`;
+//      var ayMenu = this.$refs.menuMain;
+//      ayMenu.style.width = `${boxW}px`;
+//      ayMenu.style.height = `${boxH}px`;
+//      if (x == -1) ayMenu.style.left = `calc(50% - ${boxW / 2}px)`;
+//      if (y == -1) ayMenu.style.top = `calc(50% - ${boxH / 2}px)`;
 
- ayMenu.style.width= "400px";
- ayMenu.style.height= "240px";
+//  ayMenu.style.width= "400px";
+//  ayMenu.style.height= "240px";
 
             
 			
 
-    ayMenu.style.borderBottomLeftRadius = "10px";
-    ayMenu.style.borderBottomRightRadius = "10px";
-    ayMenu.style.borderTopLeftRadius = "10px";
-    ayMenu.style.borderTopRightRadius = "10px";              
-    },
- titleTouchStart(event) {
-         this.touchStartX = parseInt(event.touches[0].clientX);
-         this.touchStartY = parseInt(event.touches[0].clientY);
-         var ayMenu = this.$refs.menuMain;
-         this.menuLastX = ayMenu.offsetLeft;
-         this.menuLastY = ayMenu.offsetTop
-     },
-     titleTouchMove(event) {
-         event.preventDefault();
-         var distanceX = event.touches[0].clientX - this.touchStartX;
-         var distanceY = event.touches[0].clientY - this.touchStartY;
-         var ayMenu = this.$refs.menuMain;
-         ayMenu.style.left = this.menuLastX + distanceX + "px";
-         ayMenu.style.top = this.menuLastY + distanceY + "px"
-     }
- }
- });
+//     ayMenu.style.borderBottomLeftRadius = "10px";
+//     ayMenu.style.borderBottomRightRadius = "10px";
+//     ayMenu.style.borderTopLeftRadius = "10px";
+//     ayMenu.style.borderTopRightRadius = "10px";              
+//     },
+//     titleTouchStart(event) {
+
+//      this.touchStartX = parseInt(event.touches[0].clientX);
+//      this.touchStartY = parseInt(event.touches[0].clientY);
+
+//      var ayMenu = this.$refs.menuMain;
+//      this.menuLastX = ayMenu.offsetLeft;
+//      this.menuLastY = ayMenu.offsetTop;
+// 	 document.ayimgui.style.height = '1px';
+// 	 document.container.style.height = '1px';
+// 	 document.aybody.style.height = '1px';
+// 	 document.aytab.style.height = '1px';
+		
+//     },
+//     titleTouchMove(event) {
+//      event.preventDefault();
+//      var distanceX = event.touches[0].clientX - this.touchStartX;
+//      var distanceY = event.touches[0].clientY - this.touchStartY;
+
+//      var ayMenu = this.$refs.menuMain;
+//      ayMenu.style.left = this.menuLastX + distanceX + "px";
+//      ayMenu.style.top = this.menuLastY + distanceY + "px";
+//     },
+//     changeTab(v) {
+//      this.tabValue = v;
+//     },
+//     closeimgui() {
+//      var menu = document.querySelector("#app");
+//      menu.style.display = 'none';
+//     }
+//    }
+//  });
 (function(_0x3169b3, _0x352ace) {
     var _0x2ea195 = _0xe6d1,
         _0x3a74d0 = _0x3169b3();

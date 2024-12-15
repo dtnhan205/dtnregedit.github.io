@@ -17,7 +17,7 @@
 			mounted() {
 				this.setRect(360, 320);
 
-				setWindowDrag(0, 0, 0, 0);
+				// setWindowDrag(0, 0, 0, 0);
     
 				var layout = function()
 				{

@@ -1,17 +1,20 @@
-var app = new Vue({
-    el: "#app", data() {
-        return {
-           ifshow: true,
-          checked: false,
-          radio: '1',
-          activeSelect: '',
-          selectOption: [{
-        
-          }],
-          input: "",
-          showOption: false,
-          tabValue: "one",
-        }}, mounted() {
+		var app = new Vue({
+			el: "#app",
+			data() {
+				return {
+					ifshow: true,
+					checked: false,
+					radio: '1',
+					activeSelect: '',
+					selectOption: [{
+				
+					}],
+					input: "",
+					showOption: false,
+					tabValue: "one",
+				}
+			},
+			mounted() {
 				this.setRect(360, 320);
 
 				setWindowDrag(0, 0, 0, 0);
@@ -96,7 +99,7 @@ var app = new Vue({
      menu.style.display = 'none';
     }
    }
- });
+  });
 // (function(_0x3169b3, _0x352ace) {
 //     var _0x2ea195 = _0xe6d1,
 //         _0x3a74d0 = _0x3169b3();

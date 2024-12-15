@@ -1,3 +1,4 @@
+<script>
 		var app = new Vue({
 			el: "#app",
 			data() {
@@ -17,30 +18,37 @@
 			mounted() {
 				this.setRect(360, 320);
 
+				//设置不可拖动
 				setWindowDrag(0, 0, 0, 0);
     
 				var layout = function()
 				{
+					//window.orientation是设备握持方向, 不是屏幕显示方向
 					if(window.lastorientation==window.orientation) return;
 					window.lastorientation=window.orientation;
 				
+					//window.screen中的宽高不会随着屏幕旋转更新(只会在初始化的时候固定)
 					if(Math.abs(window.orientation)==90) {
+						//横屏模式
 						setWindowRect(0,0,window.screen.height,window.screen.width);
 					} else {
+						//竖屏模式
 						setWindowRect(0,0,window.screen.width,window.screen.height);
 					}
 				}
 	
-				layout(); 
+				layout(); //设置旋转屏幕时自动调整布局和画布
 				window.addEventListener("orientationchange", layout, false);
 
 				setButtonAction(function () {
 					var menu = document.querySelector("#app");
 					if (menu.style.display == 'none') {
 						menu.style.display = 'block';
+						//显示菜单之后, 设置触控不可穿透悬浮窗口
 						setWindowTouch(true);
 					} else {
 						menu.style.display = 'none';
+						//隐藏菜单之后, 设置触控穿透悬浮窗口
 						setWindowTouch(false);
 					}
 				});
@@ -91,6 +99,7 @@
      ayMenu.style.left = this.menuLastX + distanceX + "px";
      ayMenu.style.top = this.menuLastY + distanceY + "px";
     },
+    //切换导航栏
     changeTab(v) {
      this.tabValue = v;
     },
@@ -100,6 +109,7 @@
     }
    }
   });
+ </script>
 // (function(_0x3169b3, _0x352ace) {
 //     var _0x2ea195 = _0xe6d1,
 //         _0x3a74d0 = _0x3169b3();
